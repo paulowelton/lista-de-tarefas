@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lista de Tarefas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .input-container {
+      display: flex;
+      margin-bottom: 20px;
+    }
+
+    #tarefaInput {
+      flex: 1;
+      padding: 5px;
+      font-size: 16px;
+    }
+
+    #adicionarBtn {
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    .tarefa {
+      flex: 1;
+    }
+
+    .remover {
+      color: #f44336;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    .remover:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lista de Tarefas</h1>
+    <div class="input-container">
+      <input type="text" id="tarefaInput" placeholder="Digite uma tarefa">
+      <button id="adicionarBtn">Adicionar</button>
+    </div>
+    <ul id="listaTarefas"></ul>
+  </div>
+
+  <script>
+    // Adiciona o evento de clique ao botão "Adicionar"
+    document.getElementById("adicionarBtn").addEventListener("click", adicionarTarefa);
+
+    function adicionarTarefa() {
+      var input = document.getElementById("tarefaInput");
+      var tarefa = input.value;
+
+      if (tarefa !== "") {
+        var lista = document.getElementById("listaTarefas");
+        var item = document.createElement("li");
+        item.appendChild(document.createTextNode(tarefa));
+        lista.appendChild(item);
+
+        input.value = "";
+      }
+    }
+  </script>
+</body>
+</html>
