@@ -1,4 +1,4 @@
- // Adiciona o evento de clique ao botão "Adicionar"
+
  document.getElementById("adicionarBtn").addEventListener("click", adicionarTarefa);
 
  function adicionarTarefa() {
